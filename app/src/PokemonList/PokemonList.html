@@ -2,10 +2,10 @@
     <div class="panel-body">
 
         Найти:
-        <input ng-model="myQuery"><br><br>
+        <input data-ng-model="vm.myQuery"><br><br>
 
         Сортировать по:
-        <select ng-model="myOrderProperty">
+        <select data-ng-model="vm.myOrderProperty">
             <option value="id">ID</option>
             <option value="weight">Весу</option>
             <option value="height">Росту</option>
@@ -15,7 +15,8 @@
 </div>
 
 <div class="list-group">
-    <a href="#/pokemons/{{singlePokemon.id }}" class="list-group-item" ng-repeat="singlePokemon in pokemons | filter:myQuery | orderBy:myOrderProperty">
+    <a ng-href="#/pokemons/{{singlePokemon.id }}" class="list-group-item"
+       data-ng-repeat="singlePokemon in vm.pokemons | filter:vm.myQuery | orderBy: vm.myOrderProperty">
         <h4 class="list-group-item-heading">
             <span class="badge">{{singlePokemon.id }}</span>
             {{singlePokemon.name | uppercase }}
@@ -34,7 +35,7 @@
 
         <p>
             Выведены покемоны, содержащие
-            {{myQuery}}
+            {{vm.myQuery}}
         </p>
 
     </div>

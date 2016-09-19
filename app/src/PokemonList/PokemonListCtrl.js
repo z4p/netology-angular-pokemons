@@ -1,11 +1,15 @@
 'use strict';
 
-pokemonApp.controller('PokemonListCtrl', function($scope, PokemonsService) {
+pokemonApp.controller('PokemonListCtrl', function(PokemonService) {
 
-    PokemonsService.getPokemons().then(function(pokemonsData) {
-        $scope.pokemons = pokemonsData.data;
+    var vm = this;
+
+    vm.myOrderProperty = 'weight';
+    vm.myQuery = '';
+
+    PokemonService.getPokemons().then(function(pokemonData) {
+        console.log(pokemonData);
+        vm.pokemons = pokemonData.data;
     });
-
-    $scope.myOrderProperty = 'weight';
 
 });

@@ -1,11 +1,12 @@
 'use strict';
 
-pokemonApp.controller('CreatePokemonCtrl', function($scope) {
+pokemonApp.controller('CreatePokemonCtrl', function() {
 
-    $scope.newPokemon = {};
-    $scope.addPokemon = function(myPokemon) {
+    var vm = this;
+    vm.newPokemon = {};
+    vm.addPokemon = function(myPokemon) {
         console.log(myPokemon);
-        $scope.newPokemon = {};
+        vm.newPokemon = {};
     };
 
 });

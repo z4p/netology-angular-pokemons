@@ -1,6 +1,6 @@
 angular
     .module('PokemonApp')
-    .factory('PokemonsService', function($http) {
+    .factory('PokemonService', function($http) {
 
             return {
 

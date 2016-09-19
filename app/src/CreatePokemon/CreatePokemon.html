@@ -12,11 +12,11 @@
 <form name="pokemonForm" novalidate>
     <div class="form-group">
         <label>Имя</label>
-        <input class="form-control" ng-model="newPokemon.name" type="text" placeholder="Имя" required>
+        <input class="form-control" data-ng-model="vm.newPokemon.name" type="text" placeholder="Имя" required>
     </div>
     <div class="form-group">
         <label>Вес</label>
-        <input class="form-control" ng-model="newPokemon.weight" type="text" placeholder="Вес">
+        <input class="form-control" data-ng-model="vm.newPokemon.weight" type="text" placeholder="Вес">
     </div>
     <div class="checkbox">
         <label>
@@ -24,5 +24,6 @@
             Активен
         </label>
     </div>
-    <button type="submit" class="btn btn-default" ng-click="addPokemon(newPokemon)" ng-disabled="pokemonForm.$invalid">Добавить</button>
+    <button type="submit" class="btn btn-default" data-ng-click="vm.addPokemon(vm.newPokemon)"
+            data-ng-disabled="pokemonForm.$invalid">Добавить</button>
 </form>

@@ -1,9 +1,10 @@
 'use strict';
 
-pokemonApp.controller('PokemonDetailCtrl', function($scope, $routeParams, PokemonsService) {
+pokemonApp.controller('PokemonDetailCtrl', function($routeParams, PokemonService) {
 
-    PokemonsService.getPokemon($routeParams['pokemonId']).then(function(pokemonData) {
-        $scope.pokemon = pokemonData.data;
+    var vm = this;
+    PokemonService.getPokemon($routeParams['pokemonId']).then(function(pokemonData) {
+        vm.pokemon = pokemonData.data;
     });
 
 });
